@@ -10,13 +10,37 @@ export default function LanguageSwitcher() {
   const isEng = pathname.startsWith("/eng");
 
   return (
-    <div className="fixed bottom-6 right-6 z-50">
-      <div className="flex items-center gap-2 rounded-full bg-white/90 px-4 py-2 shadow-lg border border-black/5 backdrop-blur">
-        <div className="flex items-center gap-1 text-xs font-medium">
+    <div className="fixed bottom-4 right-4 z-50 
+                    sm:bottom-6 sm:right-6">
+      <div
+        className="
+          flex items-center gap-1
+          rounded-full bg-white/90 
+          px-3 py-1.5 
+          shadow-lg border border-black/5 backdrop-blur
+          
+          /* sm 이상일 때 조금 넓게 */
+          sm:px-4 sm:py-2 sm:gap-2
+        "
+      >
+        <div
+          className="
+            flex items-center gap-1 
+            text-[10px] 
+
+            /* sm 이상에서 text-sm */
+            sm:text-xs sm:gap-1.5
+          "
+        >
           <Link
             href="/kor"
             className={`
-              px-2 py-1 rounded-full hover:bg-[#0553fe]/10 text-[#0553fe]
+              px-1.5 py-0.5 rounded-full
+              hover:bg-[#0553fe]/10 text-[#0553fe]
+
+              /* sm 이상 */
+              sm:px-2 sm:py-1
+
               ${isKor ? "font-bold" : "font-normal"}
             `}
           >
@@ -28,7 +52,12 @@ export default function LanguageSwitcher() {
           <Link
             href="/eng"
             className={`
-              px-2 py-1 rounded-full hover:bg-[#0553fe]/10 text-[#0553fe]
+              px-1.5 py-0.5 rounded-full
+              hover:bg-[#0553fe]/10 text-[#0553fe]
+
+              /* sm 이상 */
+              sm:px-2 sm:py-1
+
               ${isEng ? "font-bold" : "font-normal"}
             `}
           >
